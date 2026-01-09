@@ -22,11 +22,12 @@ document.getElementById('generateButton').addEventListener('click', function() {
 
 function generateRandomText() {
     const phrases = [
-        "Knock knock. Who's there? An organic being with a finite life span!",
-        "They say that true beauty is on the inside. But all you have on the inside is excessive radiation poisoning!",
-        "Life is like a box of chocolates, but this box is empty.",
-        "Error 404: Meaning of life not found.",
-        "Genetic mutation detected. Issuing congratulations card..."
+        "Nice outfit. Really, I mean it! I had no idea that the 'smelling wandering vagrant' look was back in style!",//#1
+        "They say that true beauty is on the inside. But all you have on the inside is excessive radiation poisoning!",//#2
+        "Life is like a box of chocolates, but this box is empty.",//#3
+        "Nice outfit. Really, I mean it! I had no idea that the 'smelling wandering vagrant' look was back in style!",//#4
+        "Genetic mutation detected. Issuing congratulations card..."//#5
+        ""//#6
     ];
     const randomIndex = Math.floor(Math.random() * phrases.length);
     return phrases[randomIndex]; // Return a single random phrase
