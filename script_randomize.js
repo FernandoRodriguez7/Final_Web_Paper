@@ -17,6 +17,7 @@ function generateRandomText() {
 document.getElementById('generateButton').addEventListener('click', function() {
     const randomText = generateRandomText();
     document.getElementById('randomText').innerText = randomText;
+    randomTextElement.style.color = rgb(255,0,0);
 });
 
 function generateRandomText() {
