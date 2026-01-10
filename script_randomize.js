@@ -22,18 +22,25 @@ function generateRandomText() {
 document.getElementById('generateButton').addEventListener('click', function () {
     const randomIndex = Math.floor(Math.random() * phrases.length);
 
-
     const randomText = phrases[randomIndex];
     const randomTextElement = document.getElementById('randomText');
     randomTextElement.innerText = randomText;
     randomTextElement.style.color = 'rgb(255, 0, 0)';
 
-
     const sound = sounds[randomIndex];
+
+    // Disable the button
+    const generateButton = document.getElementById('generateButton');
+    generateButton.disabled = true;
+
     sound.currentTime = 0;
     sound.play();
-});
 
+    // Add a "cooldown"
+    sound.onended = function () {
+        generateButton.disabled = false;
+    };
+});
 
 const phrases = [
     "Nice outfit. Really, I mean it! I had no idea that the 'smelling wandering vagrant' look was back in style!", // #1
@@ -43,7 +50,6 @@ const phrases = [
     "Rumor has it that you put a bounty on yourself... so for once in your life you would be Wanted!", // #5
     "One of us is slow, friendless and completely devoid of personality. The other... is a Protectron!" // #6
 ];
-
 
 const sounds = [
     document.getElementById('sound1'),
